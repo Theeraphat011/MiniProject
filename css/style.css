@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Winky Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    max-height: 100vh;
+    font-size: 1rem;
+    background-color: rgb(243, 253, 255);
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    form {
+        display: grid;
+        gap: 1rem;
+        padding: 4rem 2rem;
+        box-shadow: 1px 1px 6px #2285f6;
+        background-color: rgba(140, 217, 255, 0.4);
+        border: none;
+        border-radius: 8px;
+
+        h1 {
+            text-align: center;
+            color: #014695;
+        }
+
+        .input-box {
+            label {
+                color: #014695;
+            }
+
+            input {
+                height: 1.5rem;
+                border: none;
+                border-radius: 0.4rem;
+                box-shadow: 1px 1px 6px #00278b;
+                margin: 0.5rem 0.3rem;
+                padding: 0.8rem 0.5rem;
+            }
+
+            input:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            color: white;
+            font-size: 0.9rem;
+            margin: 0 auto;
+            padding: 0.6rem 2.3rem;
+            border: none;
+            border-radius: 0.4rem;
+            background-color: #2285f6;
+            cursor: pointer;
+            transition: 500ms;
+            box-shadow: 1px 1px 6px #00278b;
+        }
+
+        button:hover {
+            background-color: #014695;
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+    }
+}

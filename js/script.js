@@ -6,12 +6,10 @@ document
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
-      const handleForm = [
-         {
-            email: email,
-            password: password,
-         },
-      ];
+      const handleForm = {
+         email: email,
+         password: password,
+      };
 
       console.log(handleForm);
 
@@ -21,9 +19,24 @@ document
       }
 
       if (password.length < 6) {
-         alert("Password should most 6 characters");
+         alert("Password must be at least 6 characters");
          return;
       }
 
-      document.getElementById("form-register").reset();
+      try {
+         const response = await fetch("http://127.0.0.1:3000/api/register", {
+            method: "POST",
+            headers: {
+               "Content-type": "application/json",
+            },
+            body: JSON.stringify(handleForm),
+         });
+
+         if (response.ok) {
+            alert("Registration successful! 🎉");
+            document.getElementById("form-register").reset();
+         }
+      } catch (err) {
+         console.log(err);
+      }
    });

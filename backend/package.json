@@ -1,0 +1,29 @@
+{
+  "name": "tainning",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Theeraphat011/tainning#readme",
+  "bugs": {
+    "url": "https://github.com/Theeraphat011/tainning/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theeraphat011/tainning.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
+  }
+}

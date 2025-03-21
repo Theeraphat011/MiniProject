@@ -16,7 +16,7 @@ module.exports = {
          const scanMember = await userModle.findOne({ email });
          if (scanMember) {
             return res
-               .status(301)
+               .status(409)
                .json({ message: "Email already registered" });
          }
 

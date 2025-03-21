@@ -85,5 +85,9 @@ header {
         button:active {
             transform: scale(0.97);
         }
+
+        p {
+            color: #00278b;
+        }
     }
 }

@@ -5,13 +5,13 @@ document
 
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
+      const status = document.getElementById("message");
+      const submitButton = document.getElementById("submit-btn");
 
       const handleForm = {
          email: email,
          password: password,
       };
-
-      console.log(handleForm);
 
       if (!email) {
          alert("key email Please !!🤬");
@@ -23,6 +23,8 @@ document
          return;
       }
 
+      submitButton.disabled = true;
+      status.textContent = "Processing...";
       try {
          const response = await fetch("http://127.0.0.1:3000/api/register", {
             method: "POST",
@@ -33,10 +35,15 @@ document
          });
 
          if (response.ok) {
-            alert("Registration successful! 🎉");
+            const data = await response.json();
+            console.log(data);
+            status.textContent = data.message;
             document.getElementById("form-register").reset();
          }
       } catch (err) {
          console.log(err);
+         status.textContent = `❌ ${err.message}`;
+      } finally {
+         submitButton.disabled = false;
       }
    });

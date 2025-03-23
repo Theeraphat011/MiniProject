@@ -2,24 +2,26 @@ document
    .getElementById("form-register")
    .addEventListener("submit", async (e) => {
       e.preventDefault();
-
+      
+      const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
       const status = document.getElementById("message");
       const submitButton = document.getElementById("submit-btn");
 
       const handleForm = {
+         name: name,
          email: email,
          password: password,
       };
 
       if (!email) {
-         alert("key email Please !!🤬");
+         alert("Please enter an email address.");
          return;
       }
 
       if (password.length < 6) {
-         alert("Password must be at least 6 characters");
+         alert("Password must be at least 6 characters.");
          return;
       }
 
@@ -39,6 +41,9 @@ document
             console.log(data);
             status.textContent = data.message;
             document.getElementById("form-register").reset();
+         } else {
+            const errorData = await response.json();
+            status.textContent = `❌ ${errorData.message}`;
          }
       } catch (err) {
          console.log(err);

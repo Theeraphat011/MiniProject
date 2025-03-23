@@ -4,24 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Login</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pending.css">
 </head>
 
 <body>
+    <div class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
     <header>
-        <form action="" id="form-register">
-            <h1>LOGIN</h1>
+        <form action="" id="form-login">
+            <h1>Login</h1>
+            <p>Please enter your email and password to login.</p>
             <div class="input-box">
                 <label for="email">Email</label>
                 <input type="email" id="email">
             </div>
             <div class="input-box">
-                <label for="password">password</label>
+                <label for="password">Password</label>
                 <input type="password" id="password">
             </div>
             <p id="message"></p>
-            <button type="submit">sign in</button>
+            <button type="submit">Sign In</button>
 
             <div class="link-route">
                 <a href="/index.html">Home</a>
@@ -30,7 +35,7 @@
         </form>
     </header>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/login/login.js"></script>
 </body>
 
 </html>

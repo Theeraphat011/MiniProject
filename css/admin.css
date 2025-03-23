@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #e65c00;
+    --secondary-color: #343a40;
+    --hover-color: #cc5200;
+    --background-color: #e9ecef;
+    --text-color: #fff;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+nav {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 20px;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    overflow: auto;
+    transition: width 0.3s;
+
+    a {
+        display: block;
+        color: var(--text-color);
+        padding: 10px;
+        text-decoration: none;
+        border-radius: var(--border-radius);
+        transition: background-color 0.3s;
+    }
+
+    a:hover {
+        background-color: var(--hover-color);
+    }
+
+    .nav-wrapper {
+        margin-top: 2rem;
+    }
+}
+
+nav .active {
+    background-color: var(--hover-color);
+}
+
+main {
+    padding: 20px;
+    margin-left: 270px;
+    flex-grow: 1;
+    margin-top: 80px;
+    background-color: var(--text-color);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+
+    .card {
+        background-color: var(--text-color);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}

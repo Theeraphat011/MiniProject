@@ -10,13 +10,15 @@ require("dotenv").config();
 
 connectDB();
 
-app.use(cors({ credentials: true, origin: 'http://127.0.0.1:5500' }));
+app.use(cors({ credentials: true, origin: process.env.CORS_ORIGIN}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
    console.log("http://127.0.0.1:3000");
 });

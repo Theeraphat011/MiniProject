@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import 'colors.css';
 
 * {
     margin: 0;
@@ -15,11 +16,16 @@ html {
 body {
     max-height: 100vh;
     font-size: 1rem;
-    background-color: #f4f4f4; /* Updated color */
+    background-color: var(--background-color);
 }
 
 a {
     text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 input {
@@ -36,26 +42,26 @@ header {
         display: grid;
         gap: 1rem;
         padding: 4rem 2rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Updated box-shadow */
-        background-color: #fff; /* Updated color */
+        box-shadow: var(--box-shadow);
+        background-color: var(--text-color);
         border: none;
-        border-radius: 8px;
+        border-radius: var(--border-radius);
 
         h1 {
             text-align: center;
-            color: #ff6600; /* Updated color */
+            color: var(--primary-color);
         }
 
         .input-box {
             label {
-                color: #ff6600; /* Updated color */
+                color: var(--primary-color);
             }
 
             input {
                 height: 1.5rem;
                 border: none;
                 border-radius: 0.4rem;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Updated box-shadow */
+                box-shadow: var(--box-shadow);
                 margin: 0.5rem 0.3rem;
                 padding: 0.8rem 0.5rem;
             }
@@ -66,20 +72,20 @@ header {
         }
 
         button {
-            color: white;
+            color: var(--text-color);
             font-size: 0.9rem;
             margin: 0 auto;
             padding: 0.6rem 2.3rem;
             border: none;
             border-radius: 0.4rem;
-            background-color: #ff6600; /* Updated color */
+            background-color: var(--primary-color);
             cursor: pointer;
             transition: 500ms;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Updated box-shadow */
+            box-shadow: var(--box-shadow);
         }
 
         button:hover {
-            background-color: #e65c00; /* Updated color */
+            background-color: var(--hover-color);
         }
 
         button:active {
@@ -87,7 +93,14 @@ header {
         }
 
         p {
-            color: #333; /* Updated color */
+            color: var(--secondary-color);
         }
     }
+}
+
+.link-route {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
 }

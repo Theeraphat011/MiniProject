@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
-
-:root {
-    --primary-color: #e65c00;
-    --secondary-color: #343a40;
-    --hover-color: #cc5200;
-    --background-color: #e9ecef;
-    --text-color: #fff;
-    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px;
-}
+@import 'colors.css';
 
 * {
     margin: 0;

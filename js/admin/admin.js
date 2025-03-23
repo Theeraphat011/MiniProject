@@ -17,3 +17,23 @@ document.addEventListener("DOMContentLoaded", async () => {
       alert("Failed to load admin data.");
    }
 });
+
+const logout = async () => {
+   try {
+      const res = await fetch("http://127.0.0.1:3000/api/logout", {
+         method: "POST",
+         headers: {
+            "Content-type": "application/json",
+         },
+         credentials: "include",
+      });
+
+      if (res.ok) {
+         window.location.href = '../../index.html';
+      } else {
+         console.error("Logout failed:", await res.json());
+      }
+   } catch (err) {
+      console.log(err);
+   }
+};

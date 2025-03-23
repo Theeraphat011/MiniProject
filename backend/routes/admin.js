@@ -7,4 +7,5 @@ router.get('/admin', authMiddleware, (req, res) => {
     res.status(200).json({message: "Admin Page"});
 })
 
+
 module.exports = router;

@@ -10,7 +10,6 @@ document.getElementById("form-login").addEventListener("submit", async (e) => {
       password: password,
    };
 
-   status.textContent = "Processing...";
    try {
       const response = await fetch("http://127.0.0.1:3000/api/login", {
          method: "POST",
@@ -18,7 +17,7 @@ document.getElementById("form-login").addEventListener("submit", async (e) => {
             "Content-type": "application/json",
          },
          body: JSON.stringify(handleForm),
-         credentials: 'include' 
+         credentials: "include",
       });
 
       if (!response.ok) {
@@ -28,13 +27,23 @@ document.getElementById("form-login").addEventListener("submit", async (e) => {
       }
 
       const data = await response.json();
-      console.log(data.token);
+
       document.cookie = `token=${data.token}; path=/; secure; HttpOnly; SameSite=Strict`;
-      window.location.href = "../admin.html";
+
+      const overlay = document.querySelector(".loading-overlay");
+      const spinner = document.querySelector(".spinner");
+
+      overlay.style.display = "flex";
+      spinner.style.display = "block";
+
+      setTimeout(() => {
+         window.location.href = "../../admin.html";
+      }, 400);
    } catch (err) {
       console.log(err);
       if (err instanceof TypeError) {
-         status.textContent = "❌ Network Error: Failed to fetch. Please check your network connection and try again.";
+         status.textContent =
+            "❌ Network Error: Failed to fetch. Please check your network connection and try again.";
       } else {
          status.textContent = `❌ ${err.message}`;
       }

@@ -86,3 +86,13 @@ header {
     gap: 0.5rem;
     margin-top: 0.5rem;
 }
+
+input:invalid {
+    border: 1px solid red;
+}
+
+input:invalid:focus {
+    outline: none;
+    border: 1px solid red;
+    background-color: #ffe6e6;
+}

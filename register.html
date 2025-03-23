@@ -19,15 +19,15 @@
             <p>Please fill in the form to create an account.</p>
             <div class="input-box">
                 <label for="name">Name</label>
-                <input type="text" id="name">
+                <input type="text" id="name" required>
             </div>
             <div class="input-box">
                 <label for="email">Email</label>
-                <input type="email" id="email">
+                <input type="email" id="email" required>
             </div>
             <div class="input-box">
                 <label for="password">Password</label>
-                <input type="password" id="password">
+                <input type="password" id="password" required>
             </div>
             <p id="message"></p>
             <button type="submit" id="submit-btn">Sign Up</button>
@@ -40,7 +40,7 @@
     </header>
 
     <script src="./js/register/register.js"></script>
-    <script src="./js/store/pending.js"></script>
+    <script type="module" src="./js/store/loading.js"></script>
 </body>
 
 </html>

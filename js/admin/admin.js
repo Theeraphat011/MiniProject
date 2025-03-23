@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", async () => {
    }
 });
 
+
+
 const logout = async () => {
    try {
       const res = await fetch("http://127.0.0.1:3000/api/logout", {
@@ -29,7 +31,15 @@ const logout = async () => {
       });
 
       if (res.ok) {
-         window.location.href = '../../index.html';
+         const overlay = document.querySelector(".loading-overlay");
+         const spinner = document.querySelector(".spinner");
+   
+         overlay.style.display = "flex";
+         spinner.style.display = "block";
+   
+         setTimeout(() => {
+            window.location.href = "../../index.html";
+         }, 400);
       } else {
          console.error("Logout failed:", await res.json());
       }
@@ -37,3 +47,5 @@ const logout = async () => {
       console.log(err);
    }
 };
+
+
